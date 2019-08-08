@@ -3,6 +3,7 @@ class Post < ActiveRecord::Base
   validates :content, length: { minimum: 10 }
   validates :summary, length: { in: 6..20 }
   validates :category, inclusion: { in: %w(Fiction Non-Fiction), message: "%{value} is not a valid category" }
+  validates :clickbait
 
   private
   def clickbait
